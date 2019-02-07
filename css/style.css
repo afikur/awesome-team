@@ -9,6 +9,15 @@ section {
     clear: both;
 }
 
+.row {
+    clear: both;
+}
+
+.container {
+    width: 1200px;
+    margin: 0 auto;
+}
+
 /* --------------------------------------------
 - Header Style Begin
 -----------------------------------------------*/
@@ -52,4 +61,42 @@ header ul li:last-child {
 
 /* --------------------------------------------
 - Header Style End
+-----------------------------------------------*/
+
+
+
+/* --------------------------------------------
+- Body Style Start
+-----------------------------------------------*/
+section.team-members {
+    margin-top: 7em;
+}
+
+section.team-members .member {
+    float: left;
+    width: 33.33%;
+    text-align: center;
+    margin-bottom: 3em;
+}
+
+section.team-members .member img.photo {
+    border-radius: 50%;
+}
+
+section.team-members .member h2 {
+    font-weight: 300;
+    margin: 0;
+}
+
+section.team-members .member h4 {
+    margin-top: 0;
+    font-weight: 100;
+}
+
+section.team-members .member img.linkedin {
+    height: 16px;
+}
+
+/* --------------------------------------------
+- Body Style Start
 -----------------------------------------------*/
