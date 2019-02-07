@@ -9,10 +9,6 @@ section {
     clear: both;
 }
 
-.row {
-    clear: both;
-}
-
 .container {
     width: 1200px;
     margin: 0 auto;
@@ -39,7 +35,6 @@ header p {
 }
 
 header ul {
-    width: 133px;
     list-style: none;
     margin: 0 auto;
     padding: 0;
@@ -80,6 +75,8 @@ section.team-members .member {
 }
 
 section.team-members .member img.photo {
+    height: 250px;
+    width: 250px;
     border-radius: 50%;
 }
 
