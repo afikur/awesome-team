@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": ""
+    "start": "lite-server ."
   },
   "keywords": [],
   "author": "Afikur Rahman",
@@ -12,5 +12,8 @@
   "dependencies": {
     "jquery": "^3.3.1",
     "normalize.css": "^8.0.1"
+  },
+  "devDependencies": {
+    "lite-server": "^2.4.0"
   }
 }
