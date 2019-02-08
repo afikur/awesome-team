@@ -18,10 +18,25 @@ Team.prototype.getAvgAge = function() {
     return sumOfAges / 2;
 }
 
+function getRandomColor() {
+    var letters = '0123456789ABCDEF';
+    var color = '#';
+    for (var i = 0; i < 6; i++) {
+        color += letters[Math.floor(Math.random() * 16)];
+    }
+    return color;
+}
+
 var json = $.getJSON( "team.json", function() {
     var team = $.extend(new Team(), json.responseJSON);
    
     var membersHtml = [];
+
+    $('.circle').css('width', team.members.length * 16 + team.members.length * 5  - 5);
+
+    for(var j = 0; j < team.members.length; j++) {
+        $('.circle').append('<li style="background: ' + getRandomColor() + '"></li>');
+    }
 
     for(var i = 0; i < team.members.length; i++) {
         console.log(team.members[i].name);
