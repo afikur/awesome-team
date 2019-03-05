@@ -5,12 +5,9 @@ class Team {
     }
 
     getSumOfAge() {
-        let sum = 0;
-        for(let i = 0; i < this.members.length; i++) {
-            sum += this.members[i].age;
-        }
-        
-        return sum;
+        return this.members
+            .map(member => member.age)
+            .reduce((age, acc) => age + acc , 0);
     }
 
     getAvgAge() {
