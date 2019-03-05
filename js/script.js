@@ -1,46 +1,44 @@
-function Team(name, members) {
-    this.name = name;
-    this.members = members;
-}
- 
-Team.prototype.getSumOfAge = function() {
-   var sum = 0;
-   for(var i = 0; i < this.members.length; i++) {
-       sum += this.members[i].age;
-   }
-   
-  return sum;
-}
+class Team {
+    constructor(name, members) {
+        this.name = name;
+        this.members = members;
+    }
 
+    getSumOfAge() {
+        return this.members
+            .map(member => member.age)
+            .reduce((age, acc) => age + acc , 0);
+    }
 
-Team.prototype.getAvgAge = function() {
-    var sumOfAges = this.getSumOfAge();
-    return sumOfAges / 2;
+    getAvgAge() {
+        let sumOfAges = this.getSumOfAge();
+        return sumOfAges / this.members.length;
+    }
 }
 
 function getRandomColor() {
-    var letters = '0123456789ABCDEF';
-    var color = '#';
-    for (var i = 0; i < 6; i++) {
+    let letters = '0123456789ABCDEF';
+    let color = '#';
+    for (let i = 0; i < 6; i++) {
         color += letters[Math.floor(Math.random() * 16)];
     }
     return color;
 }
 
-var json = $.getJSON( "team.json", function() {
-    var team = $.extend(new Team(), json.responseJSON);
+let json = $.getJSON( "team.json", function() {
+    let team = $.extend(new Team(), json.responseJSON);
    
-    var membersHtml = [];
+    let membersHtml = [];
 
     $('.circle').css('width', team.members.length * 16 + team.members.length * 5  - 5);
 
-    for(var j = 0; j < team.members.length; j++) {
+    for(let j = 0; j < team.members.length; j++) {
         $('.circle').append('<li style="background: ' + getRandomColor() + '"></li>');
     }
 
-    for(var i = 0; i < team.members.length; i++) {
+    for(let i = 0; i < team.members.length; i++) {
         console.log(team.members[i].name);
-        var member = '<div class="member">' +
+        let member = '<div class="member">' +
                 '<img class="photo" src="' + team.members[i].photo + '" alt="">' +
                 '<h2>' + team.members[i].name + '</h2>' +
                 '<h4>' + team.members[i].designation + '</h4>' +
@@ -51,7 +49,7 @@ var json = $.getJSON( "team.json", function() {
             membersHtml.push(member);
     }
 
-    for(var j = 0; j < membersHtml.length; j++) {
+    for(let j = 0; j < membersHtml.length; j++) {
         $('.team-members .container').append(membersHtml[j])
     }
 });
